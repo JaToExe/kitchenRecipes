@@ -324,7 +324,7 @@ main .content .row .recipeBox .bestRecipeBox {
 }
 main .content .row .recipeBox .bestRecipeBox .recipe {
   display: flex;
-  gap: 10px;
+  gap: 30px;
   margin-top: 20px;
 }
 main .content .row .recipeBox .bestRecipeBox .recipe .foodImg {
