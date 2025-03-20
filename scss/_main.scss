@@ -43,24 +43,29 @@ main{
 
                     background: url(../assets/camera.png) center;
                     background-repeat: no-repeat;
+
+                    transition: transform 0.5s ease-in-out;
                 }
 
                 .slide1 {
                     background: url(../assets/slider/anna-pelzer-IGfIGP5ONV0-unsplash.jpg) center/cover;
                     background-size: 100%;
                     overflow: hidden;
+                    transition: transform 0.5s ease-in-out;
                 }
 
                 .slide2 {
                     background: url(../assets/slider/brooke-lark-oaz0raysASk-unsplash.jpg) center/cover;
                     background-size: 100%;
                     overflow: hidden;
+                    transition: transform 0.5s ease-in-out;
                 }
 
                 .slide3 {
                     background: url(../assets/slider/davide-cantelli-jpkfc5_d-DI-unsplash.jpg) center/cover;
                     background-size: 100%;
                     overflow: hidden;
+                    transition: transform 0.5s ease-in-out;
                 }
 
                 .controlPanel {
@@ -329,21 +334,6 @@ main{
 
                     .recipe:nth-child(2n) {
                         flex-direction: row-reverse; 
-
-                        h4 {
-                            display: flex;
-                            justify-content: end;
-                        }
-
-                        h6 {
-                            display: flex;
-                            justify-content: end;
-                        }
-
-                        .seeMore {
-                            display: flex;
-                            justify-content: end;
-                        }
                     }
 
                     .seeMore {
@@ -363,6 +353,20 @@ main{
                         background-color: #27A300;
                         color: #edf2f4;
                     }
+                }
+            }
+
+            .searchBoxMargin {
+                margin-top: 50px;
+            }
+
+            .recipeBoxAll {
+                .seeMoreRecipe {
+                    margin-top: 20px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
         }

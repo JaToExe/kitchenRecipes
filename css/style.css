@@ -162,21 +162,25 @@ main .content .row .silderBox .slide {
   border-radius: 15px;
   background: url(../assets/camera.png) center;
   background-repeat: no-repeat;
+  transition: transform 0.5s ease-in-out;
 }
 main .content .row .silderBox .slide1 {
   background: url(../assets/slider/anna-pelzer-IGfIGP5ONV0-unsplash.jpg) center/cover;
   background-size: 100%;
   overflow: hidden;
+  transition: transform 0.5s ease-in-out;
 }
 main .content .row .silderBox .slide2 {
   background: url(../assets/slider/brooke-lark-oaz0raysASk-unsplash.jpg) center/cover;
   background-size: 100%;
   overflow: hidden;
+  transition: transform 0.5s ease-in-out;
 }
 main .content .row .silderBox .slide3 {
   background: url(../assets/slider/davide-cantelli-jpkfc5_d-DI-unsplash.jpg) center/cover;
   background-size: 100%;
   overflow: hidden;
+  transition: transform 0.5s ease-in-out;
 }
 main .content .row .silderBox .controlPanel {
   width: 100%;
@@ -362,18 +366,6 @@ main .content .row .recipeBox .bestRecipeBox .recipe .textSection .seeMore:hover
 main .content .row .recipeBox .bestRecipeBox .recipe:nth-child(2n) {
   flex-direction: row-reverse;
 }
-main .content .row .recipeBox .bestRecipeBox .recipe:nth-child(2n) h4 {
-  display: flex;
-  justify-content: end;
-}
-main .content .row .recipeBox .bestRecipeBox .recipe:nth-child(2n) h6 {
-  display: flex;
-  justify-content: end;
-}
-main .content .row .recipeBox .bestRecipeBox .recipe:nth-child(2n) .seeMore {
-  display: flex;
-  justify-content: end;
-}
 main .content .row .recipeBox .bestRecipeBox .seeMore {
   padding: 10px;
   color: #27A300;
@@ -385,6 +377,15 @@ main .content .row .recipeBox .bestRecipeBox .seeMore {
 main .content .row .recipeBox .bestRecipeBox .seeMore:hover {
   background-color: #27A300;
   color: #edf2f4;
+}
+main .content .row .searchBoxMargin {
+  margin-top: 50px;
+}
+main .content .row .recipeBoxAll .seeMoreRecipe {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
