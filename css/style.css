@@ -1,0 +1,336 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  width: 100%;
+}
+
+.separator {
+  width: 95%;
+  height: 2px;
+  margin-left: 2.5%;
+  margin-top: 50px;
+  border-radius: 1.5px;
+  background-color: #1E8500;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+}
+header section {
+  width: 50%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+header section h1 {
+  font-size: 30px;
+  font-family: "Lobster", sans-serif;
+  color: #27A300;
+  cursor: default;
+}
+header section nav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
+header section nav p {
+  font-family: "Roboto", sans-serif;
+  height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #27A300;
+  color: white;
+  box-shadow: 1px 1px 20px -10px rgb(66, 68, 90);
+  font-size: 16px;
+  font-weight: 700;
+  transition: background-color 0.7s, color 0.7s;
+  cursor: default;
+}
+header section nav p:hover {
+  background-color: #edf2f4;
+  color: #27A300;
+}
+header section nav .material-symbols-outlined {
+  font-size: 30px;
+  color: #27A300;
+  transition: background-color 0.7s, color 0.7s;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 0 !important;
+  cursor: default;
+}
+header section nav .material-symbols-outlined:hover {
+  font-variation-settings: "FILL" 1;
+  color: #1E8500;
+}
+
+main {
+  width: 100%;
+  box-sizing: border-box;
+}
+main .content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+main .content .row {
+  width: 780px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+main .content .row .searchBox {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .content .row .searchBox .searchDiv {
+  width: 70%;
+  height: 45px;
+  border-radius: 5px;
+  border: #27A300 solid 2px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  box-shadow: 8px 8px 48px -35px rgb(66, 68, 90);
+}
+main .content .row .searchBox .searchDiv label {
+  height: 45px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  color: #27A300;
+  background-color: rgba(38, 163, 0, 0.1764705882);
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .content .row .searchBox .searchDiv input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+main .content .row .searchBox .searchDiv input:focus {
+  outline: none;
+}
+main .content .row .searchBox .searchDiv input[type=text]:focus + label {
+  background-color: rgba(237, 242, 244, 0.2901960784) !important;
+}
+main .content .row .searchBox .searchDiv:focus-within {
+  border: solid 2px #edf2f4 !important;
+  outline: none;
+}
+main .content .row .searchBox .searchBtn {
+  width: 20%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #edf2f4;
+  background-color: #27A300;
+  border-radius: 5px;
+  transition: background-color 0.7s, color 0.7s;
+  box-shadow: 8px 8px 48px -35px rgb(66, 68, 90);
+  cursor: default;
+}
+main .content .row .searchBox .searchBtn:hover {
+  color: #27A300;
+  background-color: #edf2f4;
+}
+main .content .row .elem {
+  width: 240px;
+  height: 240px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-direction: column !important;
+  display: inline-block;
+  background-color: #edf2f4;
+  color: #27A300;
+  transition: background-color 0.7s, color 0.7s, transform 0.7s;
+  cursor: default;
+  box-shadow: 8px 8px 48px -35px rgb(66, 68, 90);
+}
+main .content .row .elem .material-symbols-outlined {
+  font-size: 75px;
+}
+main .content .row .elem p {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+}
+main .content .row .elem:hover {
+  background-color: #27A300;
+  color: #edf2f4;
+  transform: scale(1.05);
+  transform-origin: center;
+}
+main .content .row .recipeBox {
+  width: 780px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  background-color: #edf2f4;
+  box-shadow: 8px 8px 48px -35px rgb(66, 68, 90);
+}
+main .content .row .recipeBox h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #27A300;
+}
+main .content .row .recipeBox .separatorBox {
+  width: 100%;
+  height: 2px;
+  margin-top: 20px;
+  background-color: #27A300;
+}
+main .content .row .recipeBox .bestRecipeBox {
+  width: 100%;
+  margin-top: 20px;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe .foodImg {
+  width: 150px;
+  height: 150px;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe .textSection {
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe .textSection h4 {
+  font-size: 30px;
+  color: #27A300;
+  font-weight: 500;
+  cursor: default;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe .textSection h6 {
+  margin-top: 10px;
+  text-align: justify;
+  cursor: default;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe .textSection .seeMore {
+  padding: 10px;
+  color: #27A300;
+  border-radius: 5px;
+  transition: background-color 0.7s, color 0.7s;
+  cursor: default;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe .textSection .seeMore:hover {
+  background-color: #27A300;
+  color: #edf2f4;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe:nth-child(2n) h4 {
+  display: flex;
+  justify-content: end;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe:nth-child(2n) h6 {
+  display: flex;
+  justify-content: end;
+}
+main .content .row .recipeBox .bestRecipeBox .recipe:nth-child(2n) .seeMore {
+  display: flex;
+  justify-content: end;
+}
+
+footer {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(173, 173, 173);
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
