@@ -37,17 +37,38 @@ main{
                     width: 100%;
                     height: 300px;
 
+                    overflow: hidden;
+
+                    border-radius: 15px;
+
                     background: url(../assets/camera.png) center;
                     background-repeat: no-repeat;
                 }
 
-                .deActive {
-                    display: none;
+                .slide1 {
+                    background: url(../assets/slider/anna-pelzer-IGfIGP5ONV0-unsplash.jpg) center/cover;
+                    background-size: 100%;
+                    overflow: hidden;
+                }
+
+                .slide2 {
+                    background: url(../assets/slider/brooke-lark-oaz0raysASk-unsplash.jpg) center/cover;
+                    background-size: 100%;
+                    overflow: hidden;
+                }
+
+                .slide3 {
+                    background: url(../assets/slider/davide-cantelli-jpkfc5_d-DI-unsplash.jpg) center/cover;
+                    background-size: 100%;
+                    overflow: hidden;
                 }
 
                 .controlPanel {
                     width: 100%;
                     height: 50px;
+
+                    font-size: 2rem;
+                    font-weight: 900;
 
                     margin-top: -160px;
 

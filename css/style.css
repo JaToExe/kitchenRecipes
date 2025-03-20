@@ -158,15 +158,31 @@ main .content .row .silderBox {
 main .content .row .silderBox .slide {
   width: 100%;
   height: 300px;
+  overflow: hidden;
+  border-radius: 15px;
   background: url(../assets/camera.png) center;
   background-repeat: no-repeat;
 }
-main .content .row .silderBox .deActive {
-  display: none;
+main .content .row .silderBox .slide1 {
+  background: url(../assets/slider/anna-pelzer-IGfIGP5ONV0-unsplash.jpg) center/cover;
+  background-size: 100%;
+  overflow: hidden;
+}
+main .content .row .silderBox .slide2 {
+  background: url(../assets/slider/brooke-lark-oaz0raysASk-unsplash.jpg) center/cover;
+  background-size: 100%;
+  overflow: hidden;
+}
+main .content .row .silderBox .slide3 {
+  background: url(../assets/slider/davide-cantelli-jpkfc5_d-DI-unsplash.jpg) center/cover;
+  background-size: 100%;
+  overflow: hidden;
 }
 main .content .row .silderBox .controlPanel {
   width: 100%;
   height: 50px;
+  font-size: 2rem;
+  font-weight: 900;
   margin-top: -160px;
   padding-left: 10px;
   padding-right: 10px;
