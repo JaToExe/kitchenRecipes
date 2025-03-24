@@ -264,9 +264,9 @@ function changeContent() {
         <div class="textBox"></div>
         
         <div class="rowChatBot">                  
-            <input type="text" placeholder="Zapytaj">
+            <input class="input" type="text" placeholder="Zapytaj">
         
-            <span class="material-symbols-outlined">robot_2</span>
+            <span class="material-symbols-outlined sentBtn">robot_2</span>
         </div>
     </div>`,
     };
@@ -404,18 +404,56 @@ function initializeSlider() {
 }
 
 function initializeAiBox() {
-    const openBtn = document.querySelector('.aiBox');
-    if (openBtn) {
-        openBtn.addEventListener('click', () => {
-            openBtn.classList.remove('aiBox');
-            openBtn.classList.add('aiBoxActive');
+    const aiBox = document.querySelector('.aiBox');
+    const textBox = document.querySelector('.textBox');
+    
+    if (aiBox) {
+        aiBox.addEventListener('click', () => {
+            aiBox.classList.replace('aiBox', 'aiBoxActive');
+            textBox.style.display = 'flex';
+            chatBot();
         });
-  
+    
         document.addEventListener('click', (e) => {
-            if (e.target && e.target.classList.contains('closeAi')) {
-            openBtn.classList.remove('aiBoxActive');
-            openBtn.classList.add('aiBox');
+            if (e.target.classList.contains('closeAi')) {
+                aiBox.classList.replace('aiBoxActive', 'aiBox');
+                textBox.style.display = 'none';
             }
         });
+    }
+}
+
+function chatBot() {
+    const textBox = document.querySelector('.textBox');
+    const sentBtn = document.querySelector('.sentBtn');
+    const inputField = document.querySelector('.input');
+
+    sentBtn.replaceWith(sentBtn.cloneNode(true));
+    const newSentBtn = document.querySelector('.sentBtn');
+
+    newSentBtn.addEventListener('click', chat);
+
+    inputField.addEventListener('keydown', (e) => {
+        if (e.key === "Enter") {
+            chat();
+        }
+    });
+
+    function chat() {
+        const textInput = inputField.value.trim();
+        if (textInput === '') return;
+
+        console.log('Wiadomość wysłana:', textInput);
+        
+        textBox.innerHTML += `<p><span class="span">Ty: </span>${textInput}</p>`;
+
+        inputField.value = '';
+
+        textBox.scrollTop = textBox.scrollHeight;  
+        
+        const botResponse = `Odpowiedź na Twoje pytanie: "${textInput}"`;
+        textBox.innerHTML += `<p><span class="span bot">Bot: </span>${botResponse}</p>`;
+        textBox.scrollTop = textBox.scrollHeight;
+        
     }
 }
