@@ -286,7 +286,13 @@ main{
 
                         .foodImg {
                             width: 150px;
+                            min-width: 150px;
+                            max-width: 150px;
                             height: 150px;
+                            min-height: 150px;
+                            max-height: 150px;
+
+                            border-radius: 15px;
                         }
 
                         .textSection {
@@ -474,6 +480,160 @@ main{
 
                 .material-symbols-outlined {
                     margin-left: 20px;
+                }
+            }
+
+            .loginBox {
+                width: 100%;
+
+                background-color: #edf2f4;
+                border-radius: 15px;
+
+                box-shadow: 8px 8px 48px -35px rgba(66, 68, 90, 1);
+
+                padding: 20px;
+                box-sizing: border-box;
+
+                font-family: "Roboto", sans-serif;
+
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+
+                gap: 20px;
+
+                label {
+                    font-size: 20px;
+                    color: #27A300;
+
+                    cursor: default;
+                }
+
+                input {
+                    width: 60%;
+                    height: 30px;
+
+                    background-color: #edf2f4;
+
+
+                    border: 2px solid #27A300;
+
+                    border-radius: 5px;
+
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                }
+
+                                    
+                input:focus { 
+                    outline: none;
+                }
+
+                .loginBtn {
+                    width: 20%;
+                    padding: 10px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    border-radius: 10px;
+
+                    color: #edf2f4;
+                    background-color: #27A300;
+
+                    transition: background-color 0.7s, color 0.7s, transform 0.7s;
+                }
+
+                .loginBtn:hover {
+                    color: #27A300;
+                    background-color: #edf2f4;
+                }
+
+                .registerLink {
+                    color: #27A300;
+
+                    cursor: pointer;
+
+                    font-weight: 600;
+
+                    transition: color 0.7s;
+                }
+            }
+
+            .registerBox {
+                width: 100%;
+
+                background-color: #edf2f4;
+                border-radius: 15px;
+
+                box-shadow: 8px 8px 48px -35px rgba(66, 68, 90, 1);
+
+                padding: 20px;
+                box-sizing: border-box;
+
+                font-family: "Roboto", sans-serif;
+
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+
+                gap: 20px;
+
+                label {
+                    font-size: 20px;
+                    color: #27A300;
+
+                    cursor: default;
+                }
+
+                input {
+                    width: 60%;
+                    height: 30px;
+
+                    background-color: #edf2f4;
+
+                    border: 2px solid #27A300;
+
+                    border-radius: 5px;
+
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                }
+
+                input:focus {
+                    outline: none;
+                }
+
+                .registerBtn {
+                    width: 20%;
+                    padding: 10px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    border-radius: 10px;
+
+                    color: #edf2f4;
+                    background-color: #27A300;
+
+                    transition: background-color 0.7s, color 0.7s, transform 0.7s;
+                }
+
+                .registerBtn:hover {
+                    color: #27A300;
+                    background-color: #edf2f4;
+                }
+
+                .loginLink {
+                    color: #27A300;
+
+                    cursor: pointer;
+
+                    font-weight: 600;
+
+                    transition: color 0.7s;
                 }
             }
         }
