@@ -13,222 +13,26 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 
-    <script src="./js/slider.js" defer></script>
+    <script src="./js/scripts.js" defer></script>
 </head>
 <body>
     <header>
         <section>
-            <h1>Gotuj z Nami!</h1>
+            <h1 class="back">Gotuj z Nami!</h1>
         </section>
         
         <section>
             <nav>
-                <p>Przepisy</p>
+                <p class="goToAllRecipy">Przepisy</p>
 
-                <span class="material-symbols-outlined">account_circle</span>
+                <span class="material-symbols-outlined goToAccount">account_circle</span>
             </nav>
         </section>
     </header>
 
     <main>
         <section class="content">
-            <!-- HOME -->
 
-            <div class="row">
-                <div class="silderBox">
-                    <div class="slide"></div>
-
-                    <div class="controlPanel">
-                        <span class="material-symbols-outlined prev">arrow_back_ios</span>
-
-                        <span class="material-symbols-outlined next">arrow_forward_ios</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="searchBox">
-                    <div class="searchDiv">
-                        <input id="searchBar" type="text">
-                        <label for="searchBar">Wpisz nazwę potrawy</label>
-                    </div>
-
-                    <div class="searchBtn">SZUKAJ</div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="elem">
-                    <span class="material-symbols-outlined">person</span>
-                    <p >Zobacz informacje o koncie</p>
-                </div>                
-                <div class="elem">
-                    <p >Przeglądaj przepisy</p>
-                    <span class="material-symbols-outlined">menu_book</span>
-                </div>                
-                <div class="elem">
-                    <span class="material-symbols-outlined">post_add</span>
-                    <p >Dodaj własny przepis</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="recipeBox">
-                    <h2>Najlepsze Przepisy</h2>
-
-                    <div class="separatorBox"></div>
-
-                    <div class="bestRecipeBox">
-                        <div class="recipe">
-                            <section>
-                                <img class="foodImg" src="./assets/camera.png" alt="">
-                            </section>
-                            <section class="textSection">
-                                <div>
-                                    <h4>Title</h4>
-                                <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga iure sunt at maxime fugit dolorem adipisci sapiente aspernatur necessitatibus quo.</h6>
-                                </div>
-                                <div class="seeMore">Zobacz więcej...</div>
-                            </section>
-                        </div>
-
-                        <div class="recipe">
-                            <section>
-                                <img class="foodImg" src="./assets/camera.png" alt="">
-                            </section>
-                            <section class="textSection">
-                                <div>
-                                    <h4>Title</h4>
-                                    <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga iure sunt at maxime fugit dolorem adipisci sapiente aspernatur necessitatibus quo.</h6>
-                                </div>
-                                    <div class="seeMore">Zobacz więcej...</div>
-                            </section>
-                        </div>
-
-                        <div class="recipe">
-                            <section>
-                                <img class="foodImg" src="./assets/camera.png" alt="">
-                            </section>
-                            <section class="textSection">
-                                <div>
-                                    <h4>Title</h4>
-                                <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga iure sunt at maxime fugit dolorem adipisci sapiente aspernatur necessitatibus quo.</h6>
-                                </div>
-                                <div class="seeMore">Zobacz więcej...</div>
-                            </section>
-                        </div>
-
-                        <p class="seeMore">Zobacz wszystkie</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recipy -->
-
-            <!-- <div class="row">
-                <div class="searchBox searchBoxMargin">
-                    <div class="searchDiv">
-                        <input id="searchBar" type="text">
-                        <label for="searchBar">Wpisz nazwę potrawy</label>
-                    </div>
-
-                    <div class="searchBtn">SZUKAJ</div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="recipeBox recipeBoxAll">
-                    <h2>Nasze i Wasze przepisy</h2>
-
-                    <div class="separatorBox"></div>
-
-                    <div class="bestRecipeBox">
-                        <div class="recipe">
-                            <section>
-                                <img class="foodImg" src="./assets/camera.png" alt="">
-                            </section>
-                            <section class="textSection">
-                                <div>
-                                    <h4>Title</h4>
-                                <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga iure sunt at maxime fugit dolorem adipisci sapiente aspernatur necessitatibus quo.</h6>
-                                </div>
-                                <div class="seeMore">Zobacz więcej...</div>
-                            </section>
-                        </div>
-
-                        <div class="recipe">
-                            <section>
-                                <img class="foodImg" src="./assets/camera.png" alt="">
-                            </section>
-                            <section class="textSection">
-                                <div>
-                                    <h4>Title</h4>
-                                    <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga iure sunt at maxime fugit dolorem adipisci sapiente aspernatur necessitatibus quo.</h6>
-                                </div>
-                                    <div class="seeMore">Zobacz więcej...</div>
-                            </section>
-                        </div>
-
-                        <div class="recipe">
-                            <section>
-                                <img class="foodImg" src="./assets/camera.png" alt="">
-                            </section>
-                            <section class="textSection">
-                                <div>
-                                    <h4>Title</h4>
-                                <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga iure sunt at maxime fugit dolorem adipisci sapiente aspernatur necessitatibus quo.</h6>
-                                </div>
-                                <div class="seeMore">Zobacz więcej...</div>
-                            </section>
-                        </div>
-
-                        <div class="recipe">
-                            <section>
-                                <img class="foodImg" src="./assets/camera.png" alt="">
-                            </section>
-                            <section class="textSection">
-                                <div>
-                                    <h4>Title</h4>
-                                <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga iure sunt at maxime fugit dolorem adipisci sapiente aspernatur necessitatibus quo.</h6>
-                                </div>
-                                <div class="seeMore">Zobacz więcej...</div>
-                            </section>
-                        </div>
-
-                        <div class="recipe">
-                            <section>
-                                <img class="foodImg" src="./assets/camera.png" alt="">
-                            </section>
-                            <section class="textSection">
-                                <div>
-                                    <h4>Title</h4>
-                                <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga iure sunt at maxime fugit dolorem adipisci sapiente aspernatur necessitatibus quo.</h6>
-                                </div>
-                                <div class="seeMore">Zobacz więcej...</div>
-                            </section>
-                        </div>
-
-                        <p class="seeMore seeMoreRecipe">Zobacz więcej <span class="material-symbols-outlined">arrow_downward</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="elem">
-                    <span class="material-symbols-outlined">person</span>
-                    <p >Zobacz informacje o koncie</p>
-                </div>                
-                <div class="elem">
-                    <p >Powrót</p>
-                    <span class="material-symbols-outlined">home</span>
-                </div>                
-                <div class="elem">
-                    <span class="material-symbols-outlined">post_add</span>
-                    <p >Dodaj własny przepis</p>
-                </div>
-            </div> -->
-        
-            <!-- Profile -->
         </section>
     </main>
 
