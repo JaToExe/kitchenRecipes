@@ -463,107 +463,47 @@ main .content .row .recipyText .mainText {
 main .content .row .recipyText .material-symbols-outlined {
   margin-left: 20px;
 }
-main .content .row .loginBox {
+main .content .row .uplaodRecipy {
   width: 100%;
-  background-color: #edf2f4;
-  border-radius: 15px;
-  box-shadow: 8px 8px 48px -35px rgb(66, 68, 90);
   padding: 20px;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  border-radius: 15px;
+  background-color: #edf2f4;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   gap: 20px;
 }
-main .content .row .loginBox label {
-  font-size: 20px;
-  color: #27A300;
-  cursor: default;
-}
-main .content .row .loginBox input {
-  width: 60%;
-  height: 30px;
-  background-color: #edf2f4;
-  border: 2px solid #27A300;
-  border-radius: 5px;
-  padding-left: 10px;
-  box-sizing: border-box;
-}
-main .content .row .loginBox input:focus {
-  outline: none;
-}
-main .content .row .loginBox .loginBtn {
-  width: 20%;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  color: #edf2f4;
-  background-color: #27A300;
-  transition: background-color 0.7s, color 0.7s, transform 0.7s;
-}
-main .content .row .loginBox .loginBtn:hover {
-  color: #27A300;
-  background-color: #edf2f4;
-}
-main .content .row .loginBox .registerLink {
-  color: #27A300;
-  cursor: pointer;
-  font-weight: 600;
-  transition: color 0.7s;
-}
-main .content .row .registerBox {
-  width: 100%;
-  background-color: #edf2f4;
-  border-radius: 15px;
-  box-shadow: 8px 8px 48px -35px rgb(66, 68, 90);
-  padding: 20px;
-  box-sizing: border-box;
+main .content .row .uplaodRecipy label {
   font-family: "Roboto", sans-serif;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 20px;
-}
-main .content .row .registerBox label {
   font-size: 20px;
   color: #27A300;
-  cursor: default;
 }
-main .content .row .registerBox input {
-  width: 60%;
+main .content .row .uplaodRecipy input {
+  border-radius: 5px;
   height: 30px;
-  background-color: #edf2f4;
+  border: 2px solid #27A300;
+  transition: background-color 0.7s, color 0.7s;
+}
+main .content .row .uplaodRecipy input:focus {
+  outline: none;
+  transition: background-color 0.7s, color 0.7s;
+}
+main .content .row .uplaodRecipy input[type=text] {
+  background-color: rgba(237, 242, 244, 0.2901960784) !important;
+  transition: background-color 0.7s, color 0.7s;
+}
+main .content .row .uplaodRecipy textarea {
+  height: 100px;
   border: 2px solid #27A300;
   border-radius: 5px;
-  padding-left: 10px;
-  box-sizing: border-box;
+  background-color: rgba(237, 242, 244, 0.2901960784) !important;
+  transition: background-color 0.7s, color 0.7s;
 }
-main .content .row .registerBox input:focus {
-  outline: none;
+main .content .row .uplaodRecipy textarea:active {
+  border: 2px solid #27A300;
 }
-main .content .row .registerBox .registerBtn {
-  width: 20%;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  color: #edf2f4;
-  background-color: #27A300;
-  transition: background-color 0.7s, color 0.7s, transform 0.7s;
-}
-main .content .row .registerBox .registerBtn:hover {
-  color: #27A300;
-  background-color: #edf2f4;
-}
-main .content .row .registerBox .loginLink {
-  color: #27A300;
-  cursor: pointer;
-  font-weight: 600;
-  transition: color 0.7s;
+main .content .row .uplaodRecipy .file {
+  border: none;
 }
 main .content .aiBox {
   width: 50px;

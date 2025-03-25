@@ -1,8 +1,9 @@
 const mysql = require('mysql2');
 const express = require('express');
 const cors = require('cors');
-const cookieParser = require('cookie-parser'); // Add cookie-parser for handling cookies
-const bcrypt = require('bcrypt'); // Add bcrypt for password hashing
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -12,9 +13,40 @@ const connection = mysql.createConnection({
 });
 
 const app = express();
-app.use(cors({ origin: true, credentials: true })); // Allow credentials for cookies
 app.use(express.json());
-app.use(cookieParser()); // Use cookie-parser middleware
+app.use(cors());
+
+// Configure multer to save images in ./assets/foodImg
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        const uploadPath = path.join(__dirname, 'assets', 'foodImg');
+        if (!fs.existsSync(uploadPath)) {
+            fs.mkdirSync(uploadPath, { recursive: true });
+        }
+        cb(null, uploadPath);
+    },
+    filename: (req, file, cb) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, uniqueSuffix + path.extname(file.originalname));
+    }
+});
+const upload = multer({ storage });
+
+connection.connect(err => {
+    if (err) {
+        console.error('Błąd połączenia z bazą danych:', err);
+        process.exit(1); // Exit the process if the connection fails
+    }
+    console.log('Połączono z MySQL!');
+});
+
+connection.on('error', err => {
+    console.error('Błąd połączenia z bazą danych:', err);
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+        console.error('Połączenie z bazą danych zostało utracone.');
+        process.exit(1); // Exit the process if the connection is lost
+    }
+});
 
 app.get('/', (req, res) => {
     res.send('Welcome to the Kitchen Recipes API!');
@@ -23,7 +55,7 @@ app.get('/', (req, res) => {
 app.get('/dane', (req, res) => {
     connection.query('SELECT * FROM `recipes` ORDER BY `likes` DESC LIMIT 3;', (err, results) => {
         if (err) {
-            console.error('Database query error:', err); // Log the error for debugging
+            console.error('Database query error:', err);
             res.status(500).json({ error: 'Błąd serwera' });
         } else {
             res.json(results);
@@ -34,7 +66,7 @@ app.get('/dane', (req, res) => {
 app.get('/dane2', (req, res) => {
     connection.query('SELECT * FROM `recipes`', (err, results) => {
         if (err) {
-            console.error('Database query error:', err); // Log the error for debugging
+            console.error('Database query error:', err);
             res.status(500).json({ error: 'Błąd serwera' });
         } else {
             res.json(results);
@@ -56,111 +88,49 @@ app.get('/recipe/:id', (req, res) => {
     });
 });
 
-// User registration endpoint
-app.post('/register', async (req, res) => {
-    const { username, email, password } = req.body;
+// Endpoint to handle adding a recipe
+app.post('/addRecipe', upload.single('file'), (req, res) => {
+    const { title, type, ingredients, description } = req.body;
+    const file = req.file;
 
-    if (!username || !email || !password) {
-        return res.status(400).json({ error: 'Wszystkie pola są wymagane' });
+    if (!title || !type || !ingredients || !description || !file) {
+        return res.status(400).json({ error: 'Wszystkie pola muszą być wypełnione!' });
     }
 
-    try {
-        const hashedPassword = await bcrypt.hash(password, 10); // Hash the password
-        connection.query(
-            'INSERT INTO `users` (`username`, `email`, `password_hash`) VALUES (?, ?, ?)',
-            [username, email, hashedPassword],
-            (err, results) => {
-                if (err) {
-                    console.error('Database query error:', err);
-                    return res.status(500).json({ error: 'Błąd serwera' });
-                }
-                res.status(201).json({ message: 'Rejestracja zakończona sukcesem' });
-            }
-        );
-    } catch (error) {
-        console.error('Error hashing password:', error);
-        res.status(500).json({ error: 'Błąd serwera' });
-    }
-});
+    const imagePath = `/assets/foodImg/${file.filename}`;
 
-// User login endpoint
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
+    const query = `
+        INSERT INTO recipes (title, type, ingredients, description, image)
+        VALUES (?, ?, ?, ?, ?)
+    `;
+    const values = [title, type, ingredients, description, imagePath];
 
-    if (!email || !password) {
-        return res.status(400).json({ error: 'Wszystkie pola są wymagane' });
-    }
-
-    connection.query(
-        'SELECT * FROM `users` WHERE `email` = ?',
-        [email],
-        async (err, results) => {
-            if (err) {
-                console.error('Database query error:', err);
-                return res.status(500).json({ error: 'Błąd serwera' });
-            }
-
-            if (results.length === 0) {
-                return res.status(401).json({ error: 'Nieprawidłowy email lub hasło' });
-            }
-
-            const user = results[0];
-            const isPasswordValid = await bcrypt.compare(password, user.password_hash);
-
-            if (!isPasswordValid) {
-                return res.status(401).json({ error: 'Nieprawidłowy email lub hasło' });
-            }
-
-            // Set a cookie to track login state
-            res.cookie('userId', user.id, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 }); // 1 day
-            res.status(200).json({ message: 'Zalogowano pomyślnie', user: { id: user.id, username: user.username, email: user.email } });
+    connection.query(query, values, (err, results) => {
+        if (err) {
+            console.error('Database query error:', err);
+            return res.status(500).json({ error: 'Błąd serwera' });
         }
-    );
+        res.status(201).json({ message: 'Przepis został dodany pomyślnie!' });
+    });
 });
 
-// Check login status endpoint
-app.get('/check-login', (req, res) => {
-    const userId = req.cookies.userId;
-
-    if (!userId) {
-        return res.status(401).json({ loggedIn: false });
-    }
-
-    connection.query(
-        'SELECT * FROM `users` WHERE `id` = ?',
-        [userId],
-        (err, results) => {
-            if (err) {
-                console.error('Database query error:', err);
-                return res.status(500).json({ error: 'Błąd serwera' });
-            }
-
-            if (results.length === 0) {
-                return res.status(401).json({ loggedIn: false });
-            }
-
-            const user = results[0];
-            res.status(200).json({ loggedIn: true, user: { id: user.id, username: user.username, email: user.email } });
-        }
-    );
-});
-
-// User logout endpoint
-app.post('/logout', (req, res) => {
-    res.clearCookie('userId'); // Clear the login cookie
-    res.status(200).json({ message: 'Wylogowano pomyślnie' });
-});
-
-connection.connect(err => {
-    if (err) {
-        console.error('Błąd połączenia:', err);
-        return;
-    }
-    console.log('Połączono z MySQL!');
-});
-
-app.listen(8080, () => {
+const server = app.listen(8080, () => {
     console.log('Serwer działa na http://localhost:8080');
+});
+
+process.on('SIGINT', () => {
+    console.log('Zamykanie serwera...');
+    connection.end(err => {
+        if (err) {
+            console.error('Błąd podczas zamykania połączenia z bazą danych:', err);
+        } else {
+            console.log('Połączenie z bazą danych zostało zamknięte.');
+        }
+        server.close(() => {
+            console.log('Serwer został zamknięty.');
+            process.exit(0);
+        });
+    });
 });
 
 module.exports = connection;

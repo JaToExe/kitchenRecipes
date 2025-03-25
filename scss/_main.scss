@@ -483,18 +483,12 @@ main{
                 }
             }
 
-            .loginBox {
+            .uplaodRecipy {
                 width: 100%;
-
-                background-color: #edf2f4;
-                border-radius: 15px;
-
-                box-shadow: 8px 8px 48px -35px rgba(66, 68, 90, 1);
-
                 padding: 20px;
-                box-sizing: border-box;
 
-                font-family: "Roboto", sans-serif;
+                border-radius: 15px;
+                background-color: #edf2f4;
 
                 display: flex;
                 justify-content: space-between;
@@ -503,137 +497,52 @@ main{
                 gap: 20px;
 
                 label {
-                    font-size: 20px;
-                    color: #27A300;
+                    font-family: "Roboto", sans-serif;
 
-                    cursor: default;
+                    font-size: 20px;
+
+                    color: #27A300;
                 }
 
-                input {
-                    width: 60%;
+                input{
+                    border-radius: 5px;
+
                     height: 30px;
-
-                    background-color: #edf2f4;
-
 
                     border: 2px solid #27A300;
 
-                    border-radius: 5px;
-
-                    padding-left: 10px;
-                    box-sizing: border-box;
+                    transition: background-color 0.7s, color 0.7s;
                 }
-
-                                    
+                
                 input:focus { 
                     outline: none;
+
+                    transition: background-color 0.7s, color 0.7s;
                 }
 
-                .loginBtn {
-                    width: 20%;
-                    padding: 10px;
+                input[type="text"] { 
+                    background-color: #edf2f44a !important;
 
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    border-radius: 10px;
-
-                    color: #edf2f4;
-                    background-color: #27A300;
-
-                    transition: background-color 0.7s, color 0.7s, transform 0.7s;
+                    transition: background-color 0.7s, color 0.7s;
                 }
 
-                .loginBtn:hover {
-                    color: #27A300;
-                    background-color: #edf2f4;
-                }
-
-                .registerLink {
-                    color: #27A300;
-
-                    cursor: pointer;
-
-                    font-weight: 600;
-
-                    transition: color 0.7s;
-                }
-            }
-
-            .registerBox {
-                width: 100%;
-
-                background-color: #edf2f4;
-                border-radius: 15px;
-
-                box-shadow: 8px 8px 48px -35px rgba(66, 68, 90, 1);
-
-                padding: 20px;
-                box-sizing: border-box;
-
-                font-family: "Roboto", sans-serif;
-
-                display: flex;
-                justify-content: space-between;
-                flex-direction: column;
-
-                gap: 20px;
-
-                label {
-                    font-size: 20px;
-                    color: #27A300;
-
-                    cursor: default;
-                }
-
-                input {
-                    width: 60%;
-                    height: 30px;
-
-                    background-color: #edf2f4;
-
+                textarea {
+                    height: 100px;
                     border: 2px solid #27A300;
 
                     border-radius: 5px;
 
-                    padding-left: 10px;
-                    box-sizing: border-box;
+                    background-color: #edf2f44a !important;
+
+                    transition: background-color 0.7s, color 0.7s;
                 }
 
-                input:focus {
-                    outline: none;
+                textarea:active {
+                    border: 2px solid #27A300;
                 }
 
-                .registerBtn {
-                    width: 20%;
-                    padding: 10px;
-
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    border-radius: 10px;
-
-                    color: #edf2f4;
-                    background-color: #27A300;
-
-                    transition: background-color 0.7s, color 0.7s, transform 0.7s;
-                }
-
-                .registerBtn:hover {
-                    color: #27A300;
-                    background-color: #edf2f4;
-                }
-
-                .loginLink {
-                    color: #27A300;
-
-                    cursor: pointer;
-
-                    font-weight: 600;
-
-                    transition: color 0.7s;
+                .file {
+                    border: none;
                 }
             }
         }
