@@ -4,164 +4,10 @@ function changeContent() {
     const content = document.querySelector('.content');
 
     const views = {
-        home: `
-    <div class="row">
-        <div class="silderBox">
-            <div class="slide"></div>
-    
-            <div class="controlPanel">
-                <span class="material-symbols-outlined prev">arrow_back_ios</span>
-    
-                <span class="material-symbols-outlined next">arrow_forward_ios</span>
-            </div>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="searchBox">
-            <div class="searchDiv">
-                <input id="searchBar" type="text">
-                <label for="searchBar">Wpisz nazwę potrawy</label>
-            </div>
-    
-            <div class="searchBtn goToSaerchRecipy">SZUKAJ</div>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="elem goToAllRecipy">
-            <p>Przeglądaj przepisy</p>
-            <span class="material-symbols-outlined">menu_book</span>
-        </div>
-
-        <div class="elem goToAddRecipy">
-            <span class="material-symbols-outlined">post_add</span>
-            <p>Dodaj własny przepis</p>
-        </div>
-
-        <div class="elem goToGit">
-            <p>Zobacz Kod Strony</p>
-
-            <span class="material-symbols-outlined">code</span>
-        </div>
-
-
-    </div>
-    
-    <div class="row">
-        <div class="recipeBox">
-            <h2>Najlepsze Przepisy</h2>
-    
-            <div class="separatorBox"></div>
-
-            </div>
-        </div>
-    </div>`,
-    recipy: `<div class="row">
-        <div class="searchBox searchBoxMargin">
-            <div class="searchDiv">
-                <input id="searchBar" type="text">
-                <label for="searchBar">Wpisz nazwę potrawy</label>
-            </div>
-    
-            <div class="searchBtn goToSaerchRecipy">SZUKAJ</div>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="recipeBox recipeBoxAll">
-            <h2>Nasze i Wasze przepisy</h2>
-    
-            <div class="separatorBox"></div>
-    
-            <div class="bestRecipeBox">
-
-            </div>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="elem back">
-            <p>Powrót</p>
-            <span class="material-symbols-outlined">home</span>
-        </div>
-            <div class="elem goToAddRecipy">
-            <span class="material-symbols-outlined">post_add</span>
-            <p>Dodaj własny przepis</p>
-        </div>
-        <div class="elem goToGit">
-            <p>Zobacz Kod Strony</p>
-
-            <span class="material-symbols-outlined">code</span>
-        </div>
-
-    </div>`,
-    singleRecipy: `
-    <div class="row imgRow"></div>
-        <div class="row singleRecipy"></div>
-    <div class="row">
-        <div class="elem back">
-            <p>Powrót</p>
-            <span class="material-symbols-outlined">home</span>
-        </div>
-                <div class="elem goToAddRecipy">
-            <span class="material-symbols-outlined">post_add</span>
-            <p>Dodaj własny przepis</p>
-        </div>
-        <div class="elem goToGit">
-            <p>Zobacz Kod Strony</p>
-
-            <span class="material-symbols-outlined">code</span>
-        </div>
-    </div>
-    
-    <div class="aiBox">
-        <h4>AI asistent<span class="material-symbols-outlined closeAi">close</span></h4>
-    
-        <div class="textBox"></div>
-        
-        <div class="rowChatBot">                  
-            <input class="input" type="text" placeholder="Zapytaj">
-        
-            <span class="material-symbols-outlined sentBtn">robot_2</span>
-        </div>
-    </div>`,
-    addRecipy: `            <div class="row">
-                <div class="uplaodRecipy">
-                        <label for="title">Tytuł:</label>
-                        <input id="title" type="text">
-
-                        <label for="type">Typ:</label>
-                        <input id="type" type="text">
-
-                    
-                        <label for="ingredians">Składniki</label>
-                        <input id="ingredians" type="text">
-
-                        <label for="descrynation">Przepis:</label>
-                        <textarea id="descrynation" type="text"></textarea>
-
-                        <label for="file">Zdjęcie:</label>
-                        <input class="file" id="file" type="file">
-
-                        <p class="uploadRecipy">Dodaj</p>
-                    </div>
-                </div>
-            <div class="row">
-                <div class="elem back">
-                    <p>Powrót</p>
-                    <span class="material-symbols-outlined">home</span>
-                </div>
-                <div class="elem goToAllRecipy">
-                    <p>Przeglądaj przepisy</p>
-                    <span class="material-symbols-outlined">menu_book</span>
-                </div>
-                <div class="elem goToGit">
-                    <p>Zobacz Kod Strony</p>
-        
-                    <span class="material-symbols-outlined">code</span>
-                </div>
-            </div>`
+        home: `<div class="row"><div class="silderBox"><div class="slide"></div><div class="controlPanel"><span class="material-symbols-outlined prev">arrow_back_ios</span><span class="material-symbols-outlined next">arrow_forward_ios</span></div></div></div><div class="row"><div class="searchBox"><div class="searchDiv"><input id="searchBar" type="text"><label for="searchBar">Wpisz nazwę potrawy</label></div><div class="searchBtn goToSaerchRecipy">SZUKAJ</div></div></div><div class="row"><div class="elem goToAllRecipy"><p>Przeglądaj przepisy</p><span class="material-symbols-outlined">menu_book</span></div><div class="elem goToAddRecipy"><span class="material-symbols-outlined">post_add</span><p>Dodaj własny przepis</p></div><div class="elem goToGit"><p>Zobacz Kod Strony</p><span class="material-symbols-outlined">code</span></div></div><div class="row"><div class="recipeBox"><h2>Najlepsze Przepisy</h2><div class="separatorBox"></div></div></div></div>`,
+        recipy: `<div class="row"><div class="searchBox searchBoxMargin"><div class="searchDiv"><input id="searchBar" type="text"><label for="searchBar">Wpisz nazwę potrawy</label></div><div class="searchBtn goToSaerchRecipy">SZUKAJ</div></div></div><div class="row"><div class="recipeBox recipeBoxAll"><h2>Nasze i Wasze przepisy</h2><div class="separatorBox"></div><div class="bestRecipeBox"></div></div></div><div class="row"><div class="elem back"><p>Powrót</p><span class="material-symbols-outlined">home</span></div><div class="elem goToAddRecipy"><span class="material-symbols-outlined">post_add</span><p>Dodaj własny przepis</p></div><div class="elem goToGit"><p>Zobacz Kod Strony</p><span class="material-symbols-outlined">code</span></div></div>`,
+        singleRecipy: `<div class="row imgRow"></div><div class="row singleRecipy"></div><div class="row"><div class="elem back"><p>Powrót</p><span class="material-symbols-outlined">home</span></div><div class="elem goToAddRecipy"><span class="material-symbols-outlined">post_add</span><p>Dodaj własny przepis</p></div><div class="elem goToGit"><p>Zobacz Kod Strony</p><span class="material-symbols-outlined">code</span></div></div><div class="aiBox"><h4>AI asistent<span class="material-symbols-outlined closeAi">close</span></h4><div class="textBox"></div><div class="rowChatBot"><input class="input" type="text" placeholder="Zapytaj"><span class="material-symbols-outlined sentBtn">robot_2</span></div></div>`,
+        addRecipy: `<div class="row"><div class="uplaodRecipy"><label for="title">Tytuł:</label><input id="title" type="text"><label for="type">Typ:</label><input id="type" type="text"><label for="ingredians">Składniki</label><input id="ingredians" type="text"><label for="descrynation">Przepis:</label><textarea id="descrynation" type="text"></textarea><label for="file">Zdjęcie:</label><input class="file" id="file" type="file"><p class="uploadRecipy">Dodaj</p></div></div><div class="row"><div class="elem back"><p>Powrót</p><span class="material-symbols-outlined">home</span></div><div class="elem goToAllRecipy"><p>Przeglądaj przepisy</p><span class="material-symbols-outlined">menu_book</span></div><div class="elem goToGit"><p>Zobacz Kod Strony</p><span class="material-symbols-outlined">code</span></div></div>`
     };
 
     let currentView = 'home';
@@ -230,21 +76,7 @@ function changeContent() {
                 recipeBoxAll.innerHTML = `<p class="error">Nie znaleziono przepisów pasujących do wyszukiwania.</p>`;
             } else {
                 filteredData.forEach(row => {
-                    recipeBoxAll.innerHTML += `
-                    <div class="bestRecipeBox">
-                        <div class="recipe">
-                            <section>
-                                <img class="foodImg" src="${row.image}" alt="${row.title}" style="object-fit: cover; object-position: center;">
-                            </section>
-                            <section class="textSection">
-                                <div>
-                                    <h4>${row.title}</h4>
-                                    <h6>${row.description}</h6>
-                                </div>
-                                <div class="seeMore goToOneRecipy" data-id="${row.id}">Zobacz więcej...</div>
-                            </section>
-                        </div>
-                    </div>`;
+                    recipeBoxAll.innerHTML += `<div class="bestRecipeBox"><div class="recipe"><section><img class="foodImg" src="${row.image}" alt="${row.title}" style="object-fit: cover; object-position: center;"></section><section class="textSection"><div><h4>${row.title}</h4><h6>${row.description}</h6></div><div class="seeMore goToOneRecipy" data-id="${row.id}">Zobacz więcej...</div></section></div></div>`;
                 });
             }
         })
@@ -262,14 +94,8 @@ function changeContent() {
             .then(data => {
                 const imgRow = document.querySelector('.imgRow');
                 const singleRecipy = document.querySelector('.singleRecipy');
-                imgRow.innerHTML = `
-                        <img class="tittleImg" src="${data.image}" alt="${data.title}" style="object-fit: cover; object-position: center;">
-                    `;
-                singleRecipy.innerHTML = `                        <div class="recipyText">
-                            <h3 class="recipyTittle">${data.title}</h3>
-                            <p class="ingredients">${data.ingredients}</p>
-                            <p class="mainText">${data.description}</p>
-                        </div>`;
+                imgRow.innerHTML = `<img class="tittleImg" src="${data.image}" alt="${data.title}" style="object-fit: cover; object-position: center;">`;
+                singleRecipy.innerHTML = `<div class="recipyText"><h3 class="recipyTittle">${data.title}</h3><p class="ingredients">${data.ingredients}</p><p class="mainText">${data.description}</p></div>`;
             })
             .catch(error => {
                 console.error('Błąd:', error);
@@ -328,7 +154,6 @@ function changeContent() {
       }
     });
     
-    
     const params = new URLSearchParams(window.location.search);
     const viewFromUrl = params.get('view');
     if (viewFromUrl && views[viewFromUrl]) {currentView = viewFromUrl;}
@@ -369,17 +194,13 @@ function changeContent() {
     });
 
     document.addEventListener('click', (e) => {
-        const recipeElement = e.target.closest('.goToGit');
-
-        if (recipeElement) {
+        if (e.target.closest('.goToGit')) {
             window.open("https://github.com/JaToExe/kitchenRecipes", "_blank", "width=800,height=600");
         }
     });
 
     document.addEventListener('click', (e) => {
-        const recipeElement = e.target.closest('.goToAddRecipy');
-
-        if (recipeElement) {
+        if (e.target.closest('.goToAddRecipy')) {
             renderView('addRecipy');
             window.scrollTo(0, 0);
         }

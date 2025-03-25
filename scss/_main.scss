@@ -544,6 +544,26 @@ main{
                 .file {
                     border: none;
                 }
+
+                .uploadRecipy {
+                    padding: 20px;
+
+                    border-radius: 15px;
+
+                    background-color: #27A300;
+                    color: #edf2f4;
+
+                    font-family: "Roboto", sans-serif;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .uplaodRecipy:hover {
+                    background-color: #edf2f4;
+                    color: #27A300;
+                }
             }
         }
 
